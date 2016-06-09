@@ -1,11 +1,11 @@
-﻿using System.Globalization;
+using System.Globalization;
 using System.Linq;
 using System.Web.Http;
 using System.Web.Http.Description;
-using Swashbuckle.Application;
-using Swashbuckle.Swagger;
 using WebActivatorEx;
 using LogicAppsExceptionManagementApi;
+using Swashbuckle.Application;
+using Swashbuckle.Swagger;
 
 [assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
 
@@ -17,7 +17,7 @@ namespace LogicAppsExceptionManagementApi
         {
             var thisAssembly = typeof(SwaggerConfig).Assembly;
 
-            GlobalConfiguration.Configuration
+            GlobalConfiguration.Configuration 
                 .EnableSwagger(c =>
                     {
                         // By default, the service root url is inferred from the request used to access the docs.
@@ -156,17 +156,6 @@ namespace LogicAppsExceptionManagementApi
                         // to execute the operation
                         //
                         //c.OperationFilter<AssignOAuth2SecurityRequirements>();
-                        //
-
-                        // Set filter to eliminate duplicate operation ids from being generated
-                        // when there are multiple operations with the same verb in the API.
-                        // ***
-                        // If you would prefer to globally impact the Swagger operation id's rather
-                        // than control them on a per-action method basis, uncomment the next line 
-                        // and the IncludeParameterNamesInOperationIdFilter class below.
-                        // ***
-                        //c.OperationFilter<IncludeParameterNamesInOperationIdFilter>();
-                        //
 
                         // Post-modify the entire Swagger document by wiring up one or more Document filters.
                         // This gives full control to modify the final SwaggerDocument. You should have a good understanding of
@@ -186,12 +175,9 @@ namespace LogicAppsExceptionManagementApi
                         // alternative implementation for ISwaggerProvider with the CustomProvider option.
                         //
                         //c.CustomProvider((defaultProvider) => new CachingSwaggerProvider(defaultProvider));
-                        // ***** Uncomment the following to enable the swagger UI *****
-                        /*
-                            })
-                        .EnableSwaggerUi(c =>
-                            {
-                        */
+                    })
+                .EnableSwaggerUi(c =>
+                    {
                         // Use the "InjectStylesheet" option to enrich the UI with one or more additional CSS stylesheets.
                         // The file must be included in your project as an "Embedded Resource", and then the resource's
                         // "Logical Name" is passed to the method as shown below.
@@ -244,14 +230,6 @@ namespace LogicAppsExceptionManagementApi
                     });
         }
     }
-
-    /// <summary>
-    /// If you would prefer to control the Swagger Operation ID
-    /// values globally, uncomment this class, as well as the 
-    /// call above that wires this Operation Filter into 
-    /// the pipeline.
-    /// </summary>
-    /*
     internal class IncludeParameterNamesInOperationIdFilter : IOperationFilter
     {
         public void Apply(Operation operation, SchemaRegistry schemaRegistry, ApiDescription apiDescription)
@@ -267,5 +245,4 @@ namespace LogicAppsExceptionManagementApi
             }
         }
     }
-    */
 }

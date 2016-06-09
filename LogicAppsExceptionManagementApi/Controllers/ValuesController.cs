@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using LogicAppsExceptionManagementApi.Models;
 using Swashbuckle.Swagger.Annotations;
 
 namespace LogicAppsExceptionManagementApi.Controllers
@@ -29,8 +30,10 @@ namespace LogicAppsExceptionManagementApi.Controllers
         // POST api/values
         [SwaggerOperation("Create")]
         [SwaggerResponse(HttpStatusCode.Created)]
-        public void Post([FromBody]string value)
+        public void Post([FromBody]Error error)
         {
+
+
         }
 
         // PUT api/values/5
