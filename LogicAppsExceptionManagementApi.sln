@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicAppsExceptionManagementApi", "LogicAppsExceptionManagementApi\LogicAppsExceptionManagementApi.csproj", "{E06EAC76-DB7B-4A27-9CED-F4F7CE9BFDCC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionHandlingApi", "..\ExceptionHandlingApi\ExceptionHandlingApi\ExceptionHandlingApi.csproj", "{BF3CA32F-F241-4117-A13E-4F1EECE98608}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{E06EAC76-DB7B-4A27-9CED-F4F7CE9BFDCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E06EAC76-DB7B-4A27-9CED-F4F7CE9BFDCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E06EAC76-DB7B-4A27-9CED-F4F7CE9BFDCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF3CA32F-F241-4117-A13E-4F1EECE98608}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF3CA32F-F241-4117-A13E-4F1EECE98608}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF3CA32F-F241-4117-A13E-4F1EECE98608}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF3CA32F-F241-4117-A13E-4F1EECE98608}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
