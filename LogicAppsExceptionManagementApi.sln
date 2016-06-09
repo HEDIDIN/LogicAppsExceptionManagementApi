@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicAppsExceptionManagemen
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionHandlingApi", "..\ExceptionHandlingApi\ExceptionHandlingApi\ExceptionHandlingApi.csproj", "{BF3CA32F-F241-4117-A13E-4F1EECE98608}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrorManagment", "D:\SOURCE\WORKSPACES\ErrorManagment\ErrorManagment\ErrorManagment.csproj", "{81C7C3D2-48E8-46D0-AD03-7A8D3F97ECB2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{BF3CA32F-F241-4117-A13E-4F1EECE98608}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF3CA32F-F241-4117-A13E-4F1EECE98608}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF3CA32F-F241-4117-A13E-4F1EECE98608}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81C7C3D2-48E8-46D0-AD03-7A8D3F97ECB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81C7C3D2-48E8-46D0-AD03-7A8D3F97ECB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81C7C3D2-48E8-46D0-AD03-7A8D3F97ECB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81C7C3D2-48E8-46D0-AD03-7A8D3F97ECB2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
