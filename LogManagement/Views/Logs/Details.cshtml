@@ -1,0 +1,67 @@
+﻿@model LogManagement.Models.CrmRequest
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CrmRequest</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PrescriberId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrescriberId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Operation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Operation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Source)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Source)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SalesForceId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SalesForceId)
+        </dd>
+
+        <dt>
+           "Insert Date"
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HeaderDateTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeToLive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimeToLive)
+        </dd>
+
+    </dl>
+</div>
+<p>
+  |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -45,7 +45,8 @@ namespace LogicAppsExceptionManagementApi.Controllers
                 source = crmRequest.Source,
                 operation = crmRequest.Operation,
                 salesforceId = crmRequest.SalesForceId,
-                ttl = 2592000
+                ttl = 2592000,
+                expired = false
             };
 
             ResourceResponse<Document> response =

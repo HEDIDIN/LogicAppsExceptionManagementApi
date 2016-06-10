@@ -1,0 +1,52 @@
+﻿@model System.Collections.Generic.IEnumerable<LogManagement.Models.CrmRequest>
+
+@{
+    ViewBag.Title = "Log Records";
+    Layout = "_Layout";
+}
+
+<h2>View Log Entries</h2>
+
+<p>
+
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PrescriberId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Operation)
+        </th>
+
+        <th>
+            "Insert Date"
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrescriberId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Operation)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.HeaderDateTime)
+            </td>
+
+            <td>
+
+                @Html.ActionLink("Details", "Details", new { id = item.Id })
+
+            </td>
+        </tr>
+    }
+
+</table>
+
