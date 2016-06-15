@@ -44,6 +44,12 @@ namespace LogicAppsExceptionManagementApi
         public static string ProcedureId = ConfigurationManager.AppSettings["ProcedureId"];
 
 
-      
+        /// <summary>
+        /// 
+        /// </summary>
+        public static string LogsCollectionId = ConfigurationManager.AppSettings["LogsCollectionId"];
+
+
+
     }
 }

@@ -10,7 +10,7 @@ using TRex.Metadata;
 
 namespace LogicAppsExceptionManagementApi.Controllers
 {
-    public class CrMtoSfErrorController : ApiController
+    public class ErrorController : ApiController
     {
         private static DocumentClient _client;
 
@@ -30,12 +30,13 @@ namespace LogicAppsExceptionManagementApi.Controllers
         {
             _client = new DocumentClient(new Uri(DocumentDbContext.EndPoint), DocumentDbContext.AuthKey);
 
-            var collectionLink = UriFactory.CreateDocumentCollectionUri(DocumentDbContext.DatabaseId, "CRMtoSF");
+            var collectionLink = UriFactory.CreateDocumentCollectionUri(DocumentDbContext.DatabaseId,
+                DocumentDbContext.CollectionId);
 
             dynamic errorMessage = new
             {
-                id = error.PrescriberId + "-" + Math.Truncate(Utility.ConvertToTimestamp(DateTime.UtcNow)),
-                prescriberId = error.PrescriberId,
+                id = error.PatientId + "-" + Math.Truncate(Utility.ConvertToTimestamp(DateTime.UtcNow)),
+                patientId = error.PatientId,
                 timestamp = DateTime.UtcNow,
                 action = error.Action,
                 body = error.Message,

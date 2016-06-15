@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using System.ComponentModel;
 using Newtonsoft.Json;
 using TRex.Metadata;
@@ -41,9 +40,9 @@ namespace LogicAppsExceptionManagementApi.Models
         [DefaultValue(true)]
         public bool IsError { get; set; }
 
-        [JsonProperty("prescriberId")]
+        [JsonProperty("patientId")]
         [JsonRequired]
-        public string PrescriberId { get; set; }
+        public string PatientId { get; set; }
 
         [JsonProperty("severity")]
         [JsonRequired]

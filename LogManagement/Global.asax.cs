@@ -16,6 +16,7 @@ namespace LogManagement
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            DocumentDbRepository<Models.CrmRequest>.Initialize();
         }
     }
 }

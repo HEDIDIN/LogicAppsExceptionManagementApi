@@ -8,15 +8,15 @@
 <h2>Details</h2>
 
 <div>
-    <h4>CrmRequest</h4>
+    <h4>Patient Record</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.PrescriberId)
+            @Html.DisplayNameFor(model => model.PatientId)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.PrescriberId)
+            @Html.DisplayFor(model => model.PatientId)
         </dd>
 
         <dt>
@@ -36,19 +36,19 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.SalesForceId)
+            @Html.DisplayNameFor(model => model.ProviderId)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.SalesForceId)
+            @Html.DisplayFor(model => model.ProviderId)
         </dd>
 
         <dt>
-           "Insert Date"
+            @Html.DisplayNameFor(model => model.Timestamp)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.HeaderDateTime)
+            @Html.DisplayFor(model => model.Timestamp)
         </dd>
 
         <dt>
@@ -58,10 +58,18 @@
         <dd>
             @Html.DisplayFor(model => model.TimeToLive)
         </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NotDeleted)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NotDeleted)
+        </dd>
 
     </dl>
 </div>
 <p>
   |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "Index") |
+    @Html.ActionLink("Delete", "Delete", new { id = Model.Id })
 </p>

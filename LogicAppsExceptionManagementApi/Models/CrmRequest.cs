@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.ComponentModel;
 using Newtonsoft.Json;
 
@@ -7,9 +6,9 @@ namespace LogicAppsExceptionManagementApi.Models
 {
     public class CrmRequest
     {
-        [JsonProperty("prescriberId")]
+        [JsonProperty("patientId")]
         [JsonRequired]
-        public Guid PrescriberId { get; set; }
+        public string PatientId { get; set; }
 
 
         [JsonProperty("operation")]
@@ -21,9 +20,9 @@ namespace LogicAppsExceptionManagementApi.Models
         [JsonRequired]
         public string Source { get; set; }
 
-        [JsonProperty("salesforceId")]
+        [JsonProperty("providerId")]
         [DefaultValue("")]
-        public string SalesForceId { get; set; }
+        public string ProviderId { get; set; }
 
         [JsonProperty("date")]
         public DateTime HeaderDateTime { get; set; }

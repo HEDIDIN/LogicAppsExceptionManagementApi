@@ -1,22 +1,20 @@
-﻿using System.Net;
+﻿using System.Collections.Generic;
+using System.Net;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using LogManagement.Models;
-using Microsoft.Ajax.Utilities;
 
 namespace LogManagement.Controllers
 {
     public class LogsController : Controller
     {
-
         /// <summary>
-        /// 
         /// </summary>
         /// <returns></returns>
         [ActionName("Index")]
         public async Task<ActionResult> IndexAsync()
         {
-            var items = await DocumentDbRepository<CrmRequest>.GetItemsAsync(response => response.Expired);
+            var items = await DocumentDbRepository<CrmRequest>.GetItemsAsync(response => response.NotDeleted);
             return View(items);
         }
 
@@ -29,7 +27,6 @@ namespace LogManagement.Controllers
         }
 
         /// <summary>
-        /// 
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -58,6 +55,20 @@ namespace LogManagement.Controllers
         {
             await DocumentDbRepository<CrmRequest>.DeleteItemAsync(id);
             return RedirectToAction("Index");
+        }
+
+
+        /// <summary>
+        ///     convert JSON string to List
+        /// </summary>
+        /// <param name="source"></param>
+        /// <returns></returns>
+        private IList<SourceList> GetList(string source)
+        {
+            // Call the deserializer
+            var validList = List.DeserializeToList<SourceList>(source);
+
+            return validList;
         }
     }
 }

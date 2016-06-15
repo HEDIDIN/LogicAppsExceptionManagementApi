@@ -6,23 +6,18 @@ namespace LogManagement.Models
 {
     public class CrmRequest
     {
-        [JsonProperty("prescriberId")]
-        [JsonRequired]
-        public Guid PrescriberId { get; set; }
+        [JsonProperty("patientId")]
+        public string PatientId { get; set; }
 
 
         [JsonProperty("operation")]
-        [JsonRequired]
         public string Operation { get; set; }
 
-
         [JsonProperty("source")]
-        [JsonRequired]
         public string Source { get; set; }
 
-        [JsonProperty("salesforceId")]
-        [DefaultValue("")]
-        public string SalesForceId { get; set; }
+        [JsonProperty("providerId")]
+        public string ProviderId { get; set; }
 
         [JsonProperty("timestamp")]
         public DateTime Timestamp { get; set; }
@@ -30,11 +25,11 @@ namespace LogManagement.Models
         [JsonProperty("ttl")]
         public int TimeToLive { get; set; }
 
-        [JsonProperty("expired")]
-        public bool Expired { get; set; }
+        [JsonProperty("notDeleted")]
+        [DefaultValue(true)]
+        public bool NotDeleted { get; set; }
 
         [JsonProperty("id")]
         public string Id { get; set; }
-
     }
 }

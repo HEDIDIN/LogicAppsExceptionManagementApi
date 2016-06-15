@@ -1,8 +1,8 @@
-﻿@model System.Collections.Generic.IEnumerable<LogManagement.Models.CrmRequest>
+﻿@model IEnumerable<LogManagement.Models.CrmRequest>
 
 @{
     ViewBag.Title = "Log Records";
-    Layout = "_Layout";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>View Log Entries</h2>
@@ -13,14 +13,14 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.PrescriberId)
+            @Html.DisplayNameFor(model => model.PatientId)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Operation)
         </th>
 
         <th>
-            "Insert Date"
+            @Html.DisplayNameFor(model => model.Timestamp)
         </th>
 
         <th></th>
@@ -30,21 +30,24 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.PrescriberId)
+                @Html.DisplayFor(modelItem => item.PatientId)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Operation)
             </td>
 
             <td>
-                @Html.DisplayFor(modelItem => item.HeaderDateTime)
+                @Html.DisplayFor(modelItem => item.Timestamp)
             </td>
+
+            <td> </td>
 
             <td>
 
-                @Html.ActionLink("Details", "Details", new { id = item.Id })
+                @Html.ActionLink("Details", "Details", new {id = item.Id})
 
             </td>
+
         </tr>
     }
 

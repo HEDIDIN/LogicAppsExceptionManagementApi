@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections;
 using System.Net;
 using System.Threading.Tasks;
 using System.Web.Http;
 using LogicAppsExceptionManagementApi.Models;
 using Microsoft.Azure.Documents;
 using Microsoft.Azure.Documents.Client;
-using Newtonsoft.Json;
 using Swashbuckle.Swagger.Annotations;
 using TRex.Metadata;
-using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 
 namespace LogicAppsExceptionManagementApi.Controllers
@@ -35,18 +32,18 @@ namespace LogicAppsExceptionManagementApi.Controllers
             _client = new DocumentClient(new Uri(DocumentDbContext.EndPoint), DocumentDbContext.AuthKey);
 
 
-            var collectionLink = UriFactory.CreateDocumentCollectionUri("Logs", "CRM");
+            var collectionLink = UriFactory.CreateDocumentCollectionUri(DocumentDbContext.DatabaseId,"Logs");
 
             dynamic logMessage = new
             {
-                id = crmRequest.PrescriberId + "_" + Math.Truncate(Utility.ConvertToTimestamp(DateTime.UtcNow)),
-                presciberId = crmRequest.PrescriberId,
+                id = crmRequest.PatientId + "_" + Math.Truncate(Utility.ConvertToTimestamp(DateTime.UtcNow)),
+                patientId = crmRequest.PatientId,
                 timestamp = crmRequest.HeaderDateTime,
-                source = crmRequest.Source,
+                source =  crmRequest.Source,
                 operation = crmRequest.Operation,
-                salesforceId = crmRequest.SalesForceId,
+                Provider = crmRequest.ProviderId,
                 ttl = 2592000,
-                expired = false
+                notDeleted = true
             };
 
             ResourceResponse<Document> response =
@@ -59,7 +56,18 @@ namespace LogicAppsExceptionManagementApi.Controllers
             return createdDocument;
         }
 
-     
+        /// <summary>
+        ///     convert JSON string to List
+        /// </summary>
+        /// <param name="source"></param>
+        /// <returns></returns>
+        private IList<SourceList> GetList(string source)
+        {
+            // Call the deserializer
+            var validList = List.DeserializeToList<SourceList>(source);
+
+            return validList;
+        }
 
     }
 

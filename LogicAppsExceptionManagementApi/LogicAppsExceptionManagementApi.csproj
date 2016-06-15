@@ -162,30 +162,24 @@
   <ItemGroup>
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\CrMtoSfErrorController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\LogController.cs" />
-    <Compile Include="Controllers\SFtoCrmErrorController.cs" />
     <Compile Include="DocumentDbContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="List.cs" />
     <Compile Include="Models\CrmRequest.cs" />
     <Compile Include="Models\CrmErrorResponse.cs" />
-    <Compile Include="Models\SalesforceRequest.cs" />
     <Compile Include="Models\Severity.cs" />
-    <Compile Include="Models\SfErrorResponse.cs" />
+    <Compile Include="Models\SourceList.cs" />
     <Compile Include="Models\status.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utility.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Service References\Application Insights\ConnectedService.json" />
-    <None Include="Properties\PublishProfiles\LogicAppsExceptionManagementApi - FTP.pubxml">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Properties\PublishProfiles\LogicAppsExceptionManagementApi - Web Deploy.pubxml">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="Properties\PublishProfiles\LogicAppsFhirExceptionManagementApi - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
