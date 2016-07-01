@@ -5,8 +5,6 @@ VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicAppsExceptionManagementApi", "LogicAppsExceptionManagementApi\LogicAppsExceptionManagementApi.csproj", "{E06EAC76-DB7B-4A27-9CED-F4F7CE9BFDCC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionHandlingApi", "..\ExceptionHandlingApi\ExceptionHandlingApi\ExceptionHandlingApi.csproj", "{BF3CA32F-F241-4117-A13E-4F1EECE98608}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrorManagment", "D:\SOURCE\WORKSPACES\ErrorManagment\ErrorManagment\ErrorManagment.csproj", "{81C7C3D2-48E8-46D0-AD03-7A8D3F97ECB2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogManagement", "LogManagement\LogManagement.csproj", "{9FFEE918-2DE5-4778-8961-D1E200AF9AE4}"
